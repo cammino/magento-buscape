@@ -1,0 +1,36 @@
+<config>
+    <modules>
+        <Cammino_Buscape>
+            <version>0.0.1</version>
+        </Cammino_Buscape>
+    </modules>
+    <global>
+        <models>
+            <buscape>
+                <class>Cammino_Buscape_Model</class>
+            </buscape>
+        </models>
+    </global>
+    <frontend>
+        <routers>
+            <buscape>
+                <use>standard</use>
+                <args>
+                    <module>Cammino_Buscape</module>
+                    <frontName>buscape</frontName>
+                </args>
+            </buscape>
+        </routers>
+    </frontend>
+    <!--
+    <default>
+        <catalog>
+            <buscape>
+                <active>0</active>
+                <model>Cammino_Buscape</model>
+                <taxonomylocale>pt-BR</taxonomylocale>
+            </buscape>
+        </catalog>
+    </default>
+    -->
+</config>
