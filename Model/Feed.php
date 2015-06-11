@@ -30,7 +30,15 @@ class Cammino_Buscape_Model_Feed extends Mage_Core_Model_Abstract
 	public function getProductXml($product) {
 		$xml  = "<produto>\n";
 		$xml .= "<descricao><![CDATA[". $product->getName() ."]]></descricao>\n";
-		$xml .= "<preco>". Mage::helper('core')->currency($product->getPrice(), true, false) ."</preco>\n";
+
+		if (($product->getSpecialPrice() > 0) &&
+			((($product->getSpecialFromDate() != "") && (strtotime($product->getSpecialFromDate()) <= time())) || ($product->getSpecialFromDate() == "")) &&
+			((($product->getSpecialToDate() != "") && (strtotime($product->getSpecialToDate()) >= time())) || ($product->getSpecialToDate() == ""))) {
+			$xml .= "<preco>". Mage::helper('core')->currency($product->getSpecialPrice(), true, false) ."</preco>\n";
+		} else {
+			$xml .= "<preco>". Mage::helper('core')->currency($product->getPrice(), true, false) ."</preco>\n";
+		}
+
 		$xml .= "<id_produto>". $product->getId() ."</id_produto>\n";
 		$xml .= "<link_prod><![CDATA[". $product->getProductUrl() ."]]></link_prod>\n";
 	//	$xml .= "<ISBN><ISBN>\n";
