@@ -38,9 +38,6 @@ class Cammino_Buscape_Model_Feed extends Mage_Core_Model_Abstract
 		if ($productPrice == null)
 			return "";
 
-		if (($product->getShowInBuscape() != null) && (intval($product->getShowInBuscape()) == 0))
-			return "";
-
 		$xml  = "<produto>\n";
 		$xml .= "<descricao><![CDATA[". $product->getName() ."]]></descricao>\n";
 		$xml .= "<canal_buscape>\n";
