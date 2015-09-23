@@ -10,6 +10,16 @@
                 <class>Cammino_Buscape_Model</class>
             </buscape>
         </models>
+        <helpers>
+            <buscape>
+                <class>Cammino_Buscape_Helper</class>
+            </buscape>
+        </helpers>
+        <blocks>
+            <buscape>
+                <class>Cammino_Buscape_Block</class>
+            </buscape>
+        </blocks>
     </global>
     <frontend>
         <routers>
