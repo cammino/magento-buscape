@@ -107,6 +107,7 @@ class Cammino_Buscape_Model_Feed extends Mage_Core_Model_Abstract
 		$ids = $product->getCategoryIds();
 		$categoryLevel = -1;
 		$storeCategory = "";
+		$categoryPrefix = strval(Mage::getStoreConfig("buscape/config/category_prefix")) != "" ? strval(Mage::getStoreConfig("buscape/config/category_prefix")) . " / " : "";
 
 		foreach($ids as $id) {
 			$category = Mage::getModel('catalog/category')->load($id);
@@ -116,7 +117,7 @@ class Cammino_Buscape_Model_Feed extends Mage_Core_Model_Abstract
 			}
 		}
 
-		return "<categoria>". $storeCategory ."</categoria>\n";
+		return "<categoria>". $categoryPrefix . $storeCategory ."</categoria>\n";
 	}
 
 	public function getProducts() {

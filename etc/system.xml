@@ -43,6 +43,14 @@
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
 						</filter_attribute>
+						<category_prefix>
+							<label>Prefixo na categoria</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</category_prefix>
 					</fields>
 				</config>
 				<boleto translate="label">
